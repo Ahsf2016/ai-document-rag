@@ -1,6 +1,19 @@
+
 .venv/
 __pycache__/
-*.pyc
-.env
+*.py[cod]
 .pytest_cache/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Database
 .chroma/
+chroma_db/
+
+# Git
+.git/
+import_times.txt
+.idea/

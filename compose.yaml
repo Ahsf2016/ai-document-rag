@@ -1,0 +1,15 @@
+
+services:
+  api:
+    image: ai-document-rag:latest
+    container_name: ai-document-rag-container
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - rag-chroma-data:/app/chroma_db
+
+volumes:
+  rag-chroma-data:
+    external: true

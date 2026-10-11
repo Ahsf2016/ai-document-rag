@@ -1,0 +1,106 @@
+[
+  {
+  "question": "What is the main goal of the project?",
+  "answer": "Build a small production-oriented document question-answering system where users upload documents, ask questions, and receive answers grounded in the uploaded material with source citations.",
+  "keywords": ["document", "question"]
+  },
+  {
+    "question": "Which vector database is recommended for the initial implementation?",
+    "answer": "Chroma.",
+    "keywords": ["chroma"]
+  },
+  {
+    "question": "Which API framework is recommended for the project?",
+    "answer": "FastAPI.",
+    "keywords": ["fastapi"]
+  },
+  {
+    "question": "What types of documents should the system support?",
+    "answer": "PDF, TXT, and DOCX documents.",
+    "keywords": ["pdf", "txt", "docx"]
+  },
+  {
+    "question": "Approximately how many questions should be created for evaluation?",
+    "answer": "20–30 questions.",
+    "keywords": ["20", "30"],
+    "match": "any"
+  },
+  {
+    "question": "What programming language is recommended as the main language?",
+    "answer": "Python.",
+    "keywords": ["python"]
+  },
+  {
+    "question": "Which tools are recommended for RAG or orchestration?",
+    "answer": "LangChain or LangGraph.",
+    "keywords": ["langchain", "langgraph"],
+    "match": "any"
+  },
+  {
+    "question": "What is recommended for generating embeddings?",
+    "answer": "Sentence Transformers or API embeddings.",
+    "keywords": ["sentence transformers", "api embeddings"],
+    "match": "any"
+  },
+  {
+    "question": "Which LLM service is recommended for generation?",
+    "answer": "Groq or another LLM API.",
+    "keywords": ["groq", "llm api"],
+    "match": "any"
+  },
+  {
+    "question": "What is recommended for containerisation?",
+    "answer": "Docker.",
+    "keywords": ["docker"]
+  },
+  {
+    "question": "What AWS service is recommended for the initial deployment?",
+    "answer": "AWS EC2.",
+    "keywords": ["ec2"]
+  },
+  {
+    "question": "What AWS service is listed as an optional document storage solution?",
+    "answer": "AWS S3.",
+    "keywords": ["s3"]
+  },
+  {
+    "question": "What monitoring tools are recommended for basic monitoring?",
+    "answer": "CloudWatch and Python logging.",
+    "keywords": ["cloudwatch", "python logging"]
+  },
+  {
+    "question": "What version-control platform is recommended?",
+    "answer": "Git/GitHub.",
+    "keywords": ["github"]
+  },
+  {
+    "question": "What metadata should be preserved where possible?",
+    "answer": "Filename and page number.",
+    "keywords": ["filename", "page"]
+  },
+  {
+    "question": "What should the system do when an answer is not present in the document?",
+    "answer": "Say that the answer is not present rather than inventing it.",
+    "keywords": ["not present"]
+  },
+  {
+    "question": "What should the system return alongside answers?",
+    "answer": "Source citations.",
+    "keywords": ["citation"]
+  },
+  {
+    "question": "What does the question-processing pipeline retrieve before generating an answer?",
+    "answer": "The top-k relevant chunks.",
+    "keywords": ["relevant", "chunks"]
+  },
+  {
+    "question": "Which endpoint is used to upload and index a document?",
+    "answer": "/documents/upload.",
+    "keywords": ["/documents/upload"]
+  },
+  {
+    "question": "Which endpoint is used to ask a question and return an answer with citations?",
+    "answer": "/ask.",
+    "keywords": ["/ask"]
+  }
+]
