@@ -86,3 +86,18 @@ def get_document(document_id: str) -> dict | None:
             }
 
     return None
+
+
+def delete_document(document_id: str) -> bool:
+    # Check whether the document exists
+    document = get_document(document_id)
+
+    if document is None:
+        return False
+
+    # Delete only chunks belonging to this document
+    collection.delete(
+        where={"document_id": document_id}
+    )
+
+    return True

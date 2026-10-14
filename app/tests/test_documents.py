@@ -86,3 +86,56 @@ def test_get_document():
 
     assert data["document_id"] == document_id
     assert data["filename"] == "document_lookup_test.txt"
+
+
+
+
+def test_delete_document():
+    # Create a temporary test document
+    upload_response = client.post(
+        "/documents/upload",
+        files={
+            "file": (
+                "document_delete_test.txt",
+                b"This is a temporary document created to test deletion.",
+                "text/plain",
+            )
+        },
+    )
+
+    assert upload_response.status_code == 200
+    document_id = upload_response.json()["document_id"]
+
+    # Delete the document
+    delete_response = client.delete(
+        f"/documents/{document_id}"
+    )
+
+    assert delete_response.status_code == 200
+    assert delete_response.json()["document_id"] == document_id
+
+    # Verify the document no longer exists
+    get_response = client.get(
+        f"/documents/{document_id}"
+    )
+
+    assert get_response.status_code == 200
+    assert get_response.json().get("error") == "Document not found"
+
+    # Verify it no longer appears in the document list
+    list_response = client.get("/documents")
+    remaining_ids = [
+        doc["document_id"]
+        for doc in list_response.json()["documents"]
+    ]
+
+    assert document_id not in remaining_ids
+
+
+def test_delete_nonexistent_document():
+    response = client.delete(
+        "/documents/nonexistent-document-id"
+    )
+
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Document not found"

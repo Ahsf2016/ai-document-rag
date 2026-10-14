@@ -16,6 +16,7 @@ from app.ingestion.vector_store import (
     store_chunks,
     list_documents,
     get_document,
+    delete_document,
 )
 
 
@@ -100,3 +101,19 @@ def get_document_by_id(document_id: str):
         }
 
     return document
+
+
+@router.delete("/documents/{document_id}")
+def delete_document_by_id(document_id: str):
+    deleted = delete_document(document_id)
+
+    if not deleted:
+        raise HTTPException(
+            status_code=404,
+            detail="Document not found",
+        )
+
+    return {
+        "message": "Document deleted successfully",
+        "document_id": document_id,
+    }
