@@ -1,8 +1,37 @@
-# DocuMind AI — Document Q&A with Retrieval-Augmented Generation
+# DocuMind AI Document Q&A with RAG
 
-DocuMind AI is a containerised AI application that allows users to upload documents, ask questions about their contents, and receive AI-generated answers grounded in retrieved document information.
+DocuMind AI is a personal learning project developed to build practical experience with **Retrieval-Augmented Generation (RAG), FastAPI, and Docker-based deployment**.
 
-The project combines Retrieval-Augmented Generation (RAG), semantic search, a REST API, and an interactive Streamlit interface to demonstrate how large language models can be used to build practical document question-answering systems.
+The project explores how documents can be processed, converted into vector embeddings, and retrieved to provide relevant context for AI-generated answers. It combines a FastAPI backend, ChromaDB vector storage, a Groq-powered language model, and a Streamlit interface.
+
+Rather than just learning these technologies individually, I built the application to understand how they work together in an end-to-end AI system, from document ingestion and semantic retrieval to question answering and containerised deployment.
+
+## Learning Objectives
+
+This project was developed partly as a self-directed learning exercise, with the following goals:
+
+- **Understand RAG pipelines:** Learn how document processing, text chunking, embeddings, vector databases, retrieval, and language model generation fit together.
+- **Gain practical FastAPI experience:** Build REST API endpoints for document management and question answering.
+- **Learn Docker deployment:** Containerise the backend and frontend, configure services with Docker Compose, and manage persistent vector database storage.
+- **Explore semantic search:** Use Sentence Transformers and ChromaDB to retrieve relevant document content.
+- **Integrate an LLM API:** Connect retrieved document context to the Groq API to generate context-grounded answers.
+- **Connect the components:** Develop an interactive Streamlit interface that communicates with the backend API.
+
+## What I Built
+
+- Document upload and processing for PDF, TXT, and DOCX files.
+- Text embeddings and vector storage using Sentence Transformers and ChromaDB.
+- Retrieval-augmented question answering using the Groq API.
+- A FastAPI backend with document management and question-answering endpoints.
+- A Streamlit interface for uploading documents and interacting with the system.
+- Docker-based deployment using Docker Compose, with persistent storage for document embeddings.
+
+## Key Learning Outcome
+
+Building DocuMind AI has helped me move beyond studying individual tools and towards understanding how to integrate AI components into a working application. It has provided hands-on experience with RAG architecture, API development, containerisation, service configuration, and the practical challenges of deploying an AI application locally.
+
+This is an ongoing learning project, with further improvements planned for testing, retrieval evaluation, documentation, and deployment.
+
 
 ## Features
 
