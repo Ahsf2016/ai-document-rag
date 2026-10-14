@@ -195,6 +195,25 @@ The system depends on the quality of document extraction, chunking, retrieval an
 - Deployment to a publicly accessible hosting environment.
 - Performance optimisation and monitoring.
 
+
+## System Architecture
+
+DocuMind AI uses a Retrieval-Augmented Generation (RAG) pipeline to retrieve relevant information from uploaded documents before generating answers with a large language model.
+
+The Streamlit frontend communicates with the FastAPI backend, which coordinates document processing, embedding generation, vector retrieval through ChromaDB, and answer generation through the Groq API.
+
+![DocuMind AI System Architecture](screenshots/architecture.png)
+
+### RAG Pipeline
+
+1. **Document ingestion:** Upload PDF, TXT, or DOCX files.
+2. **Text processing:** Extract text and split it into smaller chunks.
+3. **Embedding generation:** Convert text chunks into vectors using Sentence Transformers.
+4. **Vector storage:** Store embeddings and associated document information in ChromaDB.
+5. **Semantic retrieval:** Retrieve relevant chunks for a user's question.
+6. **Answer generation:** Send the question and retrieved context to the Groq API and display the generated answer with source references.
+
+
 ## Screenshots
 
 ### Document Dashboard
