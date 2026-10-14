@@ -195,6 +195,25 @@ The system depends on the quality of document extraction, chunking, retrieval an
 - Deployment to a publicly accessible hosting environment.
 - Performance optimisation and monitoring.
 
+
+## Screenshots
+
+### Document Dashboard
+The dashboard provides an overview of the document workspace, API connection status, supported file formats, and uploaded documents.
+
+
+
+### RAG Question Answering
+Ask natural-language questions about an uploaded document and receive an answer with a supporting source reference.
+
+
+
+### FastAPI Documentation
+The interactive API documentation exposes the endpoints used for document management and question answering.
+
+
+
+
 ## Author
 
 Developed as a portfolio project exploring Retrieval-Augmented Generation, NLP, API development and containerised AI applications.
